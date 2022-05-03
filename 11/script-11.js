@@ -20,8 +20,8 @@ let increment = 0.1;
 beginShape ();
 for (let a= 0;a < TWO_PI; a += increment){
 let r1 = r+random(-50,10);
-let x = r* cos (a);
-let y = r* sin(a);
+let x = r1* cos (a);
+let y = r1* sin(a);
 vertex(x,y);
 }
 

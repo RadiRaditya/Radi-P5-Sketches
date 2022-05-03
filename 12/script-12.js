@@ -1,52 +1,65 @@
-var ourFont;
-//var pt;
-var vehicles= [];
+var i = 0;
+var o = 0;
+var bool = false;
+var startAnim = false;
 
-function preload (){
-  ourFont = loadFont ('asset/SPACEARE.TTF')
-}
 
 function setup() {
-  createCanvas (1000,1000);
-  background (202, 131, 246)
-  //textFont (font);
-  //fill (202, 131, 246);
-  //noStroke ()
-  //textSize (150)
-  //text ('Q',100,200)
+createCanvas(1000, 1000);
+}
 
- // background (255);
-  //frameRate (fr);
- // clr = color (255,0,0);
+function draw() {
+background(220);
+}
+function setup(){
+createCanvas(1000, 1000);
+background(100);
+angleMode(DEGREES);
+frameRate(120);
+}
+function draw(){
 
+if (i <= 270 && startAnim == true){
+push();
+translate(width/2, height/2);
+noFill(255);
+stroke(0);
+rect(0, 0, 300, 200);
 
+rotate(i);
+rect(0, 0, 300, 200);
+pop();
+i++;
+}
+if( i >= 90){
+bool = true;
+}
 
- stroke (255);
- strokeWeight (4);
+if (o <= 500 && bool == true) {
+translate(width/2, height/2);
+push();
+noFill();
+stroke(0);
+rect(0, 0 + o, 300, 200);
+pop();
+o++;
+}
+}
+function mouseClicked(){
+startAnim = true;
+}
 
+function keyPressed(){
+if (key == 's'){
+saveCanvas("sketch-22", "png");
+}
+mouseCheck();
+}
 
- pt = ourFont.textToPoints('q',100,200,300);
- //console.log (pt);
-
-// console.log(pt[5])
-
- for (var i = 0; i< pt.length; i++) {
-   var pt = pt [i];
-   var vehicle = new Vehicle (pt.x,pt.y);
-   vehicles.push (Vehicle);
-
-   //point (pt[i].x,pt[i].y)
- }
+function mouseCheck(){
+if (mouseX <=500 && mouseY <= 500){
+background(114, 137, 173);
+}
 }
 
 
-function draw () {
- background (51);
- for (var i=0; i < vehicles.length;i++){
-   var v = vehicles[i];
-   console.log(v)
-   v.update();
-   v.show();
-
- }
-}

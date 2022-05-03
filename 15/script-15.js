@@ -15,19 +15,20 @@ function setup() {
 	createCanvas(1000, 1000);
 	angleMode (degrees)
 	//colorMode(RGB,100);
-	b1 = color(146,187,233);
-	b2 = color(238,174,202);
-	// noLoop();
+	// b1 = color(146,187,233);
+	// b2 = color(238,174,202);
+	// // noLoop();
 
-	//framerate(60)
-	setGradient(0, 0, width / 2, height, b1, b2, X_AXIS);
-	setGradient(width / 2, 0, width / 2, height, b2, b1, X_AXIS);
+	// //framerate(60)
+	// setGradient(0, 0, width / 2, height, b1, b2, X_AXIS);
+	// setGradient(width / 2, 0, width / 2, height, b2, b1, X_AXIS);
 	
 }
   
   function draw() {
-	setGradient(0, 0, width / 2, height, b1, b2, X_AXIS);
-	setGradient(width/ 2, 0, width / 2, height, b2, b1, X_AXIS);
+	// setGradient(0, 0, width / 2, height, b1, b2, X_AXIS);
+	// setGradient(width/ 2, 0, width / 2, height, b2, b1, X_AXIS);
+	background (0)
 	noCursor ();
 	noStroke ();
 	fill (255);
@@ -89,5 +90,10 @@ function setGradient(x, y, w, h, c1, c2, axis) {
 	  }
 	}
   }
-  
-  
+ 
+function keyPressed(){
+	if (key == 's'){
+	saveCanvas("sketch-22", "png");
+	}
+	mouseCheck();
+	}

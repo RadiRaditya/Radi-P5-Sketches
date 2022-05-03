@@ -29,3 +29,8 @@ function draw () {
 	pop ()
 }
 
+function mousePressed() {
+	//this is to save the image evertime you click with mous
+saveCanvas("s1","png")
+
+}

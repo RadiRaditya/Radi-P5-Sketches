@@ -1,7 +1,7 @@
 let angle=0;
 
 function setup() {
-  createCanvas(1000, 1000);
+  createCanvas(window.innerWidth, window.innerHeight);
   frameRate (10)
 }
 
@@ -9,7 +9,7 @@ function draw() {
 background (255);
  translate(mouseX,mouseY);
  rotate (angle);
-  smiley(0, 0, 300);
+  smiley(0, 0, 80);
   print (pmouseX = '->')
 
 }
@@ -19,7 +19,7 @@ function smiley(x, y, diameter) {
   angle=angle+0.01
   fill(254, 212, 17);                  //fills the face with yellow color
   stroke(0);                          //outline in black color 
-  strokeWeight(5); 
+  strokeWeight(4); 
   //outline weight set to 2
   ellipse(x, y, diameter, diameter);  //creates the outer circle
 
